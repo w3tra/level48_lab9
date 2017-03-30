@@ -1,0 +1,9 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootstrap/theme";
+
+@import "custom";
+
+@import "admin/products";
+@import "admin/categories";
+@import "products";

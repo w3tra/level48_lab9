@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-sm-12">
+    <h1>Products <%= link_to 'New Product', new_admin_product_path, class: 'btn btn-success' %></h1>
+  </div>
+</div>
+
+<hr />
+
+<table class="table table-striped">
+  <tr>
+    <th>Image</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price</th>
+    <th>Category</th>
+    <th>Actions</th>
+  </tr>
+
+  <% @products.each do |product| %>
+      <tr>
+        <td><%= image_tag "/uploads/#{product.id}", size: '100' %></td>
+        <td><%= product.title %></td>
+        <td><%= product.description %></td>
+        <td><%= product.price %></td>
+        <td><%= product.category.name %></td>
+        <td>
+          <%= link_to 'View', admin_product_path(product) %>
+          <%= link_to 'Edit', edit_admin_product_path(product) %>
+          <%= link_to 'Delete', admin_product_path(product),
+                      method: :delete,
+                      data: {confirm: 'Do you want to remove this product?'} %>
+        </td>
+      </tr>
+  <% end %>
+
+</table>

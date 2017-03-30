@@ -1,0 +1,67 @@
+<div class="jumbotron">
+  <h1>Welcome to Shop!</h1>
+  <p>Here you can purchase all kinds of computer hardware for lowest prices. We sell from only trusted and large distributors,
+  to fulfill all your DIY computer needs!</p>
+  <p><a href="#" class="btn btn-primary btn-lg">Learn more</a></p>
+</div>
+
+<div class="row">
+
+  <div class="col-sm-3">
+    <div class="panel panel-default" id="cart">
+      <div class="panel-heading">
+        <h3 class="panel-title">Categories</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% Category.all.each do |category| %>
+            <li><a href="#"><%= category.name %></a></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-12 products-pagination">
+        <%= will_paginate @products %>
+      </div>
+    </div>
+
+    <div class="row">
+        <% @products.each do |product| %>
+
+        <div class="col-sm-6 product-item">
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h3><%= product.title %></h3>
+              <div class="img" style="background-image: url('<%= image_path product_image(product.id) %>');"></div>
+              <h4>$<%= product.price %></h4>
+              <p>
+                <button class="btn btn-default">View</button>
+                <button class="btn btn-primary">Add to cart</button>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <% end %>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        <%= will_paginate @products %>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3">
+      <div class="panel panel-default" id="cart">
+        <div class="panel-heading">
+          <h3 class="panel-title">Cart</h3>
+        </div>
+        <div class="panel-body">
+          Your cart is empty
+        </div>
+      </div>
+  </div>
+</div>
