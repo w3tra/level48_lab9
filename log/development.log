@@ -628,3 +628,340 @@ Processing by Devise::SessionsController#new as HTML
   Rendered devise/sessions/new.html.erb within layouts/application (2.9ms)
   Rendered layouts/application/_navbar.html.erb (0.6ms)
 Completed 200 OK in 58ms (Views: 56.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'admin@example.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "email", "encrypted_password", "admin", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "Admin"], ["email", "admin@example.com"], ["encrypted_password", "$2a$10$vwuPqpZwYkH8HF2Rkzjl8eHIlATd/9OLBuAUhygzMhWVH7X8vpsCy"], ["admin", "t"], ["created_at", "2017-03-30 13:34:46.953314"], ["updated_at", "2017-03-30 13:34:46.953314"]]
+  [1m[35m (0.6ms)[0m  commit transaction
+
+
+Started POST "/ru/users/sign_in" for ::1 at 2017-03-30 19:34:57 +0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C63hYTUZToGuvA2NttKr3A6lCyj++nJ7rzxYn1Bq7uxd/WvtHM59belW5EulAiw69YLZ8tS6wzZ5TEcYUzYpeQ==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "locale"=>"ru"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "admin@example.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2017-03-30 13:34:57.424697"], ["current_sign_in_at", "2017-03-30 13:34:57.424697"], ["last_sign_in_ip", "::1"], ["current_sign_in_ip", "::1"], ["sign_in_count", 1], ["updated_at", "2017-03-30 13:34:57.425566"], ["id", 1]]
+  [1m[36m (1.3ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/ru
+Completed 302 Found in 96ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/ru" for ::1 at 2017-03-30 19:34:57 +0600
+Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[35mCategory Load (0.2ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  "products".* FROM "products" LIMIT 10 OFFSET 0
+  Rendered products/index.html.erb within layouts/application (6.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/application/_navbar.html.erb (4.4ms)
+Completed 500 Internal Server Error in 69ms (ActiveRecord: 0.9ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"devise/registrations", :locale=>#<User id: 1, name: "Admin", created_at: "2017-03-30 13:34:46", updated_at: "2017-03-30 13:34:57", email: "admin@example.com", encrypted_password: "$2a$10$vwuPqpZwYkH8HF2Rkzjl8eHIlATd/9OLBuAUhygzMhW...", remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2017-03-30 13:34:57", last_sign_in_at: "2017-03-30 13:34:57", current_sign_in_ip: "::1", last_sign_in_ip: "::1", admin: true>} missing required keys: [:locale]):
+    26:                 <% if current_user.admin? %>
+    27:                   <li><%= link_to 'Admin Panel', admin_root_path %></li>
+    28:                 <% end %>
+    29:                 <li><%= link_to 'Edit profile', edit_user_registration_path(current_user) %></li>
+    30:                 <li><a href="#">View orders</a></li>
+    31:                 <li class="divider"></li>
+    32:                 <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+  app/views/layouts/application/_navbar.html.erb:29:in `_app_views_layouts_application__navbar_html_erb___3918224190403425726_70318884897040'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__962005067671962176_70318904973560'
+
+
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (78.4ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (65.0ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (144.1ms)
+
+
+Started GET "/ru" for ::1 at 2017-03-30 19:38:05 +0600
+Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" LIMIT 10 OFFSET 0
+  Rendered products/index.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/application/_navbar.html.erb (36.5ms)
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `locale_edit_user_registration_path' for #<#<Class:0x007fe8cc1cdab0>:0x007fe8cc6eefa8>):
+    26:                 <% if current_user.admin? %>
+    27:                   <li><%= link_to 'Admin Panel', admin_root_path %></li>
+    28:                 <% end %>
+    29:                 <li><%= link_to 'Edit profile', locale_edit_user_registration_path(current_user) %></li>
+    30:                 <li><a href="#">View orders</a></li>
+    31:                 <li class="divider"></li>
+    32:                 <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+  app/views/layouts/application/_navbar.html.erb:29:in `_app_views_layouts_application__navbar_html_erb___3918224190403425726_70318922219000'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__962005067671962176_70318904973560'
+
+
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.2ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (80.8ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (67.8ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (151.6ms)
+
+
+Started GET "/ru" for ::1 at 2017-03-30 19:40:31 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" LIMIT 10 OFFSET 0
+  Rendered products/index.html.erb within layouts/application (12.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/application/_navbar.html.erb (36.5ms)
+Completed 500 Internal Server Error in 331ms (ActiveRecord: 1.6ms)
+
+ActionView::Template::Error (undefined method `locale_edit_user_registration_path' for #<#<Class:0x007f819b074440>:0x007f81947b0878>):
+    26:                 <% if current_user.admin? %>
+    27:                   <li><%= link_to 'Admin Panel', admin_root_path %></li>
+    28:                 <% end %>
+    29:                 <li><%= link_to 'Edit profile', locale_edit_user_registration_path(current_user) %></li>
+    30:                 <li><a href="#">View orders</a></li>
+    31:                 <li class="divider"></li>
+    32:                 <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+  app/views/layouts/application/_navbar.html.erb:29:in `_app_views_layouts_application__navbar_html_erb___4403587239826114339_70097286751840'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__3069089700833737121_70097314309100'
+
+
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (93.4ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (72.5ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (173.9ms)
+
+
+Started GET "/ru" for ::1 at 2017-03-30 19:40:39 +0600
+Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" LIMIT 10 OFFSET 0
+  Rendered products/index.html.erb within layouts/application (1.8ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/application/_navbar.html.erb (5.4ms)
+Completed 500 Internal Server Error in 93ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"devise/registrations", :locale=>#<User id: 1, name: "Admin", created_at: "2017-03-30 13:34:46", updated_at: "2017-03-30 13:34:57", email: "admin@example.com", encrypted_password: "$2a$10$vwuPqpZwYkH8HF2Rkzjl8eHIlATd/9OLBuAUhygzMhW...", remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2017-03-30 13:34:57", last_sign_in_at: "2017-03-30 13:34:57", current_sign_in_ip: "::1", last_sign_in_ip: "::1", admin: true>} missing required keys: [:locale]):
+    26:                 <% if current_user.admin? %>
+    27:                   <li><%= link_to 'Admin Panel', admin_root_path %></li>
+    28:                 <% end %>
+    29:                 <li><%= link_to 'Edit profile', edit_user_registration_path(current_user) %></li>
+    30:                 <li><a href="#">View orders</a></li>
+    31:                 <li class="divider"></li>
+    32:                 <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+  app/views/layouts/application/_navbar.html.erb:29:in `_app_views_layouts_application__navbar_html_erb___4403587239826114339_70097298697860'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__3069089700833737121_70097314309100'
+
+
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (70.9ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (62.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (141.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-30 19:40:51 +0600
+
+
+Started GET "/en/" for ::1 at 2017-03-30 19:40:51 +0600
+Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" LIMIT 10 OFFSET 0
+  Rendered products/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/application/_navbar.html.erb (4.1ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"devise/registrations", :locale=>#<User id: 1, name: "Admin", created_at: "2017-03-30 13:34:46", updated_at: "2017-03-30 13:34:57", email: "admin@example.com", encrypted_password: "$2a$10$vwuPqpZwYkH8HF2Rkzjl8eHIlATd/9OLBuAUhygzMhW...", remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2017-03-30 13:34:57", last_sign_in_at: "2017-03-30 13:34:57", current_sign_in_ip: "::1", last_sign_in_ip: "::1", admin: true>} missing required keys: [:locale]):
+    26:                 <% if current_user.admin? %>
+    27:                   <li><%= link_to 'Admin Panel', admin_root_path %></li>
+    28:                 <% end %>
+    29:                 <li><%= link_to 'Edit profile', edit_user_registration_path(current_user) %></li>
+    30:                 <li><a href="#">View orders</a></li>
+    31:                 <li class="divider"></li>
+    32:                 <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+  app/views/layouts/application/_navbar.html.erb:29:in `_app_views_layouts_application__navbar_html_erb___4403587239826114339_70097285220800'
+  app/views/layouts/application.html.erb:11:in `_app_views_layouts_application_html_erb__3069089700833737121_70097288609260'
+
+
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.8ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (93.5ms)
+
+
+Started GET "/en/" for ::1 at 2017-03-30 19:44:06 +0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" LIMIT 10 OFFSET 0
+  Rendered products/index.html.erb within layouts/application (13.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/application/_navbar.html.erb (16.9ms)
+Completed 200 OK in 300ms (Views: 282.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/en/" for ::1 at 2017-03-30 19:44:15 +0600
+Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" LIMIT 10 OFFSET 0
+  Rendered products/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/application/_navbar.html.erb (1.4ms)
+Completed 200 OK in 49ms (Views: 47.8ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out?locale=en" for ::1 at 2017-03-30 19:44:19 +0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"r4P/vEkt1kHGmDLTqDiwpoInLP82/Be21bkXNp8Up5k85wimH2LQVMo1HyIHUiJH7SN7TNZvErWFOvSuYMnm1Q==", "locale"=>"en"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/en
+Completed 302 Found in 7ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/en" for ::1 at 2017-03-30 19:44:19 +0600
+Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" LIMIT 10 OFFSET 0[0m
+  Rendered products/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/application/_navbar.html.erb (4.1ms)
+Completed 200 OK in 73ms (Views: 72.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ru" for ::1 at 2017-03-30 19:44:21 +0600
+Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" LIMIT 10 OFFSET 0
+  Rendered products/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/application/_navbar.html.erb (1.8ms)
+Completed 200 OK in 71ms (Views: 69.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/en" for ::1 at 2017-03-30 19:44:22 +0600
+Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" LIMIT 10 OFFSET 0[0m
+  Rendered products/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/application/_navbar.html.erb (1.4ms)
+Completed 200 OK in 66ms (Views: 64.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users/sign_in?locale=en" for ::1 at 2017-03-30 19:44:24 +0600
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (27.9ms)
+  Rendered layouts/application/_navbar.html.erb (0.6ms)
+Completed 200 OK in 97ms (Views: 95.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in?locale=en" for ::1 at 2017-03-30 19:44:35 +0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2B+0Fw1WWxPF1HubK3gKcNpfTiKo7VIIfrA8yQ+zHmNo6CSRdOvoB0Z+8rqVWvHJByOxzLuTUhwHze3Z3z1XGg==", "user"=>{"email"=>"admin@example.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "locale"=>"en"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "admin@example.com"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE "users" SET "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["current_sign_in_at", "2017-03-30 13:44:35.152374"], ["sign_in_count", 2], ["updated_at", "2017-03-30 13:44:35.153103"], ["id", 1]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/en
+Completed 302 Found in 89ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/en" for ::1 at 2017-03-30 19:44:35 +0600
+Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mProduct Load (0.2ms)[0m  SELECT  "products".* FROM "products" LIMIT 10 OFFSET 0
+  Rendered products/index.html.erb within layouts/application (1.7ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/application/_navbar.html.erb (2.5ms)
+Completed 200 OK in 59ms (Views: 57.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/ru" for ::1 at 2017-03-30 19:44:37 +0600
+Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[35mCategory Load (0.1ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" LIMIT 10 OFFSET 0
+  Rendered products/index.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/application/_navbar.html.erb (1.5ms)
+Completed 200 OK in 51ms (Views: 49.7ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out?locale=ru" for ::1 at 2017-03-30 19:44:39 +0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6H9bT0oYgQdzzZMtgobwGJER9+w2eBxB+uBdxigPjDWV4GWGKLEGKamQ3CF9KSeWDV2Mh3hunM5O0igZ+E2Svg==", "locale"=>"ru"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/ru
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/ru" for ::1 at 2017-03-30 19:44:39 +0600
+Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mProduct Load (0.2ms)[0m  [1mSELECT  "products".* FROM "products" LIMIT 10 OFFSET 0[0m
+  Rendered products/index.html.erb within layouts/application (2.5ms)
+  Rendered layouts/application/_navbar.html.erb (1.2ms)
+Completed 200 OK in 55ms (Views: 52.6ms | ActiveRecord: 0.4ms)
