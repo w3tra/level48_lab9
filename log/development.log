@@ -327,3 +327,304 @@ Processing by Devise::SessionsController#new as HTML
   Rendered devise/sessions/new.html.erb within layouts/application (3.4ms)
   Rendered layouts/application/_navbar.html.erb (0.5ms)
 Completed 200 OK in 138ms (Views: 54.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?locale=en" for ::1 at 2017-03-30 19:28:04 +0600
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"locale"=>"en"}
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (0.9ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-03-30 19:29:02 +0600
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/products" for ::1 at 2017-03-30 19:29:20 +0600
+
+ActionController::RoutingError (No route matches [GET] "/products"):
+  actionpack (4.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.3) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.3) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.3) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.3) lib/rails/engine.rb:518:in `call'
+  railties (4.2.3) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/wetra/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/wetra/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/wetra/.rvm/rubies/ruby-2.2.2/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (77.0ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.6ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/wetra/.rvm/gems/ruby-2.2.2/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (98.8ms)
+
+
+Started GET "/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/en/products" for ::1 at 2017-03-30 19:30:25 +0600
+
+
+Started GET "/" for ::1 at 2017-03-30 19:30:28 +0600
+
+
+Started GET "/en/" for ::1 at 2017-03-30 19:30:28 +0600
+Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[35mCategory Load (0.3ms)[0m  SELECT "categories".* FROM "categories"
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "products"[0m
+  [1m[35mProduct Load (0.1ms)[0m  SELECT  "products".* FROM "products" LIMIT 10 OFFSET 0
+  Rendered products/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/application/_navbar.html.erb (1.2ms)
+Completed 200 OK in 72ms (Views: 65.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/ru" for ::1 at 2017-03-30 19:30:31 +0600
+Processing by ProductsController#index as HTML
+  Parameters: {"locale"=>"ru"}
+  [1m[36mCategory Load (0.1ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "products"
+  [1m[36mProduct Load (0.1ms)[0m  [1mSELECT  "products".* FROM "products" LIMIT 10 OFFSET 0[0m
+  Rendered products/index.html.erb within layouts/application (1.8ms)
+  Rendered layouts/application/_navbar.html.erb (1.4ms)
+Completed 200 OK in 52ms (Views: 50.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ru/users/sign_in" for ::1 at 2017-03-30 19:30:34 +0600
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.2ms)
+  Rendered layouts/application/_navbar.html.erb (1.2ms)
+Completed 200 OK in 63ms (Views: 55.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/en/users/sign_in" for ::1 at 2017-03-30 19:30:38 +0600
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/application/_navbar.html.erb (0.6ms)
+Completed 200 OK in 55ms (Views: 52.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/en/users/sign_in" for ::1 at 2017-03-30 19:30:43 +0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n689fLZkvn78wxL3HPPW//fJpcVP3gj846YFEtPhJNPJ/7fwn7ONkrsp+zEPI1EZDO53H2WeubE11hqV0L3jRg==", "user"=>{"email"=>"w3tra@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "locale"=>"en"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n689fLZkvn78wxL3HPPW//fJpcVP3gj846YFEtPhJNPJ/7fwn7ONkrsp+zEPI1EZDO53H2WeubE11hqV0L3jRg==", "user"=>{"email"=>"w3tra@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "locale"=>"en"}
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.5ms)
+  Rendered layouts/application/_navbar.html.erb (0.7ms)
+Completed 200 OK in 79ms (Views: 77.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ru/users/sign_in" for ::1 at 2017-03-30 19:30:46 +0600
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.6ms)
+  Rendered layouts/application/_navbar.html.erb (0.8ms)
+Completed 200 OK in 68ms (Views: 66.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/ru/users/sign_in" for ::1 at 2017-03-30 19:30:49 +0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/0Vm4M/I6r//V2JFsR+FatDBMgFp/ufB7AC+YA/8n8SpFexs5h/ZU7i9i4OizwKMK+bg20O+Vow6cKHnDKBYUQ==", "user"=>{"email"=>"w3tra@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "locale"=>"ru"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/0Vm4M/I6r//V2JFsR+FatDBMgFp/ufB7AC+YA/8n8SpFexs5h/ZU7i9i4OizwKMK+bg20O+Vow6cKHnDKBYUQ==", "user"=>{"email"=>"w3tra@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "locale"=>"ru"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.9ms)
+  Rendered layouts/application/_navbar.html.erb (0.7ms)
+Completed 200 OK in 94ms (Views: 92.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/en/users/sign_in" for ::1 at 2017-03-30 19:30:55 +0600
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/application/_navbar.html.erb (0.8ms)
+Completed 200 OK in 65ms (Views: 62.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/en/users/sign_in" for ::1 at 2017-03-30 19:30:56 +0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YjDyfJ+4UPqBlr5SH7RWlBXG/Q16eT7xvOGlJLaCWC40YHjwtm9jFsZ8V5QMZNFy7uEv11A5j7xqkbqjtd6fuw==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "locale"=>"en"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YjDyfJ+4UPqBlr5SH7RWlBXG/Q16eT7xvOGlJLaCWC40YHjwtm9jFsZ8V5QMZNFy7uEv11A5j7xqkbqjtd6fuw==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "locale"=>"en"}
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/application/_navbar.html.erb (0.6ms)
+Completed 200 OK in 63ms (Views: 61.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ru/users/sign_in" for ::1 at 2017-03-30 19:30:58 +0600
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"locale"=>"ru"}
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.1ms)
+  Rendered layouts/application/_navbar.html.erb (0.6ms)
+Completed 200 OK in 78ms (Views: 75.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/ru/users/sign_in" for ::1 at 2017-03-30 19:30:59 +0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0jcF2w40mOJfO/pN22NsZ7AWZFwuGZJroX/zWH78mb+EZ49XJ+OrDhjRE4vIs+uBSzG2hgRZIyZ3D+zffaBeKg==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "locale"=>"ru"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0jcF2w40mOJfO/pN22NsZ7AWZFwuGZJroX/zWH78mb+EZ49XJ+OrDhjRE4vIs+uBSzG2hgRZIyZ3D+zffaBeKg==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in", "locale"=>"ru"}
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.9ms)
+  Rendered layouts/application/_navbar.html.erb (0.6ms)
+Completed 200 OK in 58ms (Views: 56.9ms | ActiveRecord: 0.0ms)

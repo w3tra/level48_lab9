@@ -9,6 +9,8 @@
 </head>
 <body>
 <%= render 'layouts/application/navbar' %>
+<%= link_to_unless_current 'EN', locale: 'en' %>
+<%= link_to_unless_current 'RU', locale: 'ru' %>
 
 <div class="container">
 
